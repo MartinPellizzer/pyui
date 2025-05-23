@@ -38,7 +38,7 @@ textarea_2 = {
     'line_index': 0,
     'char_index': 0,
     'x': 500,
-    'y': 0,
+    'y': 500,
     'w': 500,
     'h': 500,
 }
@@ -47,7 +47,7 @@ components = []
 components.append(textarea_1)
 components.append(textarea_2)
 
-component_focus_id = 0
+component_focus_id = 1
 component_focus = components[component_focus_id]
 
 '''
@@ -61,12 +61,14 @@ char_index = 0
 '''
 
 def cursor_update():
+    x = component_focus['x']
+    y = component_focus['y']
     _line_index = component_focus['line_index']
     _char_index = component_focus['char_index']
     _lines = component_focus['lines']
     text_prev = _lines[_line_index][:_char_index]
     w, h = font.size(text_prev)
-    pygame.draw.rect(screen, '#ffffff', pygame.Rect(w, _line_index*50, 1, 50), 1)
+    pygame.draw.rect(screen, '#ffffff', pygame.Rect(x+w, y+_line_index*50, 1, 50), 1)
 
 def input_keybord_char(key_name):
     if len(key_name) == 1:
@@ -253,6 +255,18 @@ while running:
 
     screen.fill('#101010')
 
+    x, y = pygame.mouse.get_pos()
+    if pygame.mouse.get_pressed()[0]:
+        for component in components:
+            x1 = component['x']
+            y1 = component['y']
+            x2 = component['x'] + component['w']
+            y2 = component['y'] + component['h']
+            if x >= x1 and y >= y1 and x < x2 and y < y2:
+                component_focus_id = component['id']
+                component_focus = components[component_focus_id]
+                break
+
     cursor_update()
 
     for component in components:
@@ -264,77 +278,9 @@ while running:
 
         for line_i, line in enumerate(component['lines']):
             text_surface = font.render(line, False, (255, 255, 255))
-            screen.blit(text_surface, (x, font_size*line_i))
+            screen.blit(text_surface, (x, y+font_size*line_i))
 
     pygame.display.flip()
 
 pygame.quit()
 
-'''
-elif event.key == pygame.K_UP:
-    if line_index > 0: 
-        line_index -= 1
-        if char_index > len(lines[line_index]):
-            char_index = len(lines[line_index])
-elif event.key == pygame.K_DOWN:
-    if line_index < len(lines)-1: 
-        line_index += 1
-        if char_index > len(lines[line_index]):
-            char_index = len(lines[line_index])
-elif event.key == pygame.K_LEFT and pygame.key.get_mods() & pygame.KMOD_CTRL:
-    if char_index > 0: 
-        for char_i in range(char_index-2, -1, -1):
-            if lines[line_index][char_i] == ' ':
-                char_index = char_i+1
-                break
-        if char_i == 0:
-            char_index = char_i
-elif event.key == pygame.K_LEFT:
-    if char_index > 0: 
-        char_index -= 1
-elif event.key == pygame.K_RIGHT and pygame.key.get_mods() & pygame.KMOD_CTRL:
-    if char_index < len(lines[line_index]): 
-        for char_i in range(char_index+1, len(lines[line_index]), 1):
-            if lines[line_index][char_i] == ' ':
-                char_index = char_i
-                break
-        if char_i == len(lines[line_index])-1:
-            char_index = char_i+1
-elif event.key == pygame.K_RIGHT:
-    if char_index < len(lines[line_index]): 
-        char_index += 1
-elif event.key == pygame.K_BACKSPACE:
-    if char_index > 0: 
-        char_index -= 1
-        lines[line_index] = lines[line_index][:char_index] + lines[line_index][char_index+1:]
-    else:
-        if line_index > 0:
-            line_index -= 1
-            char_index = len(lines[line_index])
-            for line_i in range(line_index, len(lines)-1):
-                lines[line_i] += lines[line_i+1]
-                lines[line_i+1] = ''
-            lines = lines[:-1]
-elif event.key == pygame.K_DELETE:
-    if char_index < len(lines[line_index]): 
-        lines[line_index] = lines[line_index][:char_index] + lines[line_index][char_index+1:]
-    else:
-        if len(lines) > 1:
-            for line_i in range(line_index, len(lines)-1):
-                if line_i == line_index:
-                    lines[line_i] += lines[line_i+1]
-                else:
-                    lines[line_i] = lines[line_i+1]
-            lines = lines[:-1]
-elif event.key == pygame.K_RETURN:
-    lines.append('')
-    for line_i in range(len(lines)-1, line_index, -1):
-        lines[line_i] = lines[line_i-1]
-    lines[line_index] = lines[line_index][:char_index]
-    line_index += 1
-    lines[line_index] = lines[line_index][char_index:]
-    char_index = 0
-elif event.key == pygame.K_SPACE:
-    lines[line_index] = lines[line_index][:char_index] + ' ' + lines[line_index][char_index:]
-    char_index += 1
-'''
