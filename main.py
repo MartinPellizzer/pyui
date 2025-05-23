@@ -39,9 +39,25 @@ while running:
                     line_index += 1
                     if char_index > len(lines[line_index]):
                         char_index = len(lines[line_index])
+            elif event.key == pygame.K_LEFT and pygame.key.get_mods() & pygame.KMOD_CTRL:
+                if char_index > 0: 
+                    for char_i in range(char_index-2, -1, -1):
+                        if lines[line_index][char_i] == ' ':
+                            char_index = char_i+1
+                            break
+                    if char_i == 0:
+                        char_index = char_i
             elif event.key == pygame.K_LEFT:
                 if char_index > 0: 
                     char_index -= 1
+            elif event.key == pygame.K_RIGHT and pygame.key.get_mods() & pygame.KMOD_CTRL:
+                if char_index < len(lines[line_index]): 
+                    for char_i in range(char_index+1, len(lines[line_index]), 1):
+                        if lines[line_index][char_i] == ' ':
+                            char_index = char_i
+                            break
+                    if char_i == len(lines[line_index])-1:
+                        char_index = char_i+1
             elif event.key == pygame.K_RIGHT:
                 if char_index < len(lines[line_index]): 
                     char_index += 1
@@ -81,8 +97,9 @@ while running:
                 char_index = 0
             else:
                 key_name = pygame.key.name(event.key)
-                lines[line_index] = lines[line_index][:char_index] + key_name + lines[line_index][char_index:]
-                char_index += 1
+                if len(key_name) == 1:
+                    lines[line_index] = lines[line_index][:char_index] + key_name + lines[line_index][char_index:]
+                    char_index += 1
 
     screen.fill('#101010')
 
