@@ -13,6 +13,9 @@ screen = pygame.display.set_mode([window_w, window_h])
 font_size = 48
 font = pygame.font.SysFont('Arial', font_size)
 
+font_size = 16
+font_16 = pygame.font.SysFont('Arial', font_size)
+
 textarea_1 = {
     'id': 0,
     'type': 'textarea',
@@ -43,22 +46,86 @@ textarea_2 = {
     'h': 500,
 }
 
+label_1 = {
+    'id': 2,
+    'type': 'label',
+    'text': 'Label 1',
+    'x': 700,
+    'y': 10,
+    'w': 20,
+    'h': 100,
+}
+
+button_1 = {
+    'id': 3,
+    'type': 'button',
+    'text': 'Button 1',
+    'x': 700,
+    'y': 40,
+    'w': 0,
+    'h': 0,
+    'px': 16,
+    'py': 8,
+}
+
 components = []
 components.append(textarea_1)
 components.append(textarea_2)
+components.append(label_1)
+components.append(button_1)
 
 component_focus_id = 1
 component_focus = components[component_focus_id]
 
-'''
-lines = [
-    'line 1',
-    'line 2',
-    'line 3',
-]
-line_index = 0
-char_index = 0
-'''
+cursor = {
+    'x': 0,
+    'y': 0,
+    'w': 1,
+    'h': 50,
+}
+
+def component_textarea_draw(component):
+    x = component['x']
+    y = component['y']
+    w = component['w']
+    h = component['h']
+    pygame.draw.rect(screen, '#ffffff', pygame.Rect(x, y, w, h), 1)
+    for line_i, line in enumerate(component['lines']):
+        text_surface = font.render(line, False, (255, 255, 255))
+        screen.blit(text_surface, (x, y+font_size*line_i))
+
+def component_label_draw(component):
+    x = component['x']
+    y = component['y']
+    text = component['text']
+    text_surface = font_16.render(text, False, (255, 255, 255))
+    screen.blit(text_surface, (x, y))
+
+def component_button_draw(component):
+    x = component['x']
+    y = component['y']
+    # w = component['w']
+    # h = component['h']
+    px = component['px']
+    py = component['py']
+    text = component['text']
+    ###
+    text_surface = font_16.render(text, False, '#000000')
+    w, h = font_16.size(text)
+    pygame.draw.rect(screen, '#ffffff', pygame.Rect(x, y, w+px*2, h+py*2))
+
+    screen.blit(text_surface, (x+px, y+py))
+
+def components_draw():
+    for component in components:
+        if component['type'] == '':
+            pass
+        elif component['type'] == 'textarea':
+            component_textarea_draw(component)
+        elif component['type'] == 'label':
+            component_label_draw(component)
+        elif component['type'] == 'button':
+            component_button_draw(component)
 
 def cursor_update():
     x = component_focus['x']
@@ -68,7 +135,15 @@ def cursor_update():
     _lines = component_focus['lines']
     text_prev = _lines[_line_index][:_char_index]
     w, h = font.size(text_prev)
-    pygame.draw.rect(screen, '#ffffff', pygame.Rect(x+w, y+_line_index*50, 1, 50), 1)
+    cursor['x'] = x+w
+    cursor['y'] = y+_line_index*cursor['h']
+
+def cursor_draw():
+    x = cursor['x']
+    y = cursor['y']
+    w = cursor['w']
+    h = cursor['h']
+    pygame.draw.rect(screen, '#ffffff', pygame.Rect(x, y, w, h), 1)
 
 def input_keybord_char(key_name):
     if len(key_name) == 1:
@@ -221,8 +296,22 @@ def input_keybord_right():
     component_focus['char_index'] = _char_index
     component_focus['lines'] = _lines
 
-running = True
-while running:
+def component_focus_update():
+    global component_focus
+    x, y = pygame.mouse.get_pos()
+    if pygame.mouse.get_pressed()[0]:
+        for component in components:
+            x1 = component['x']
+            y1 = component['y']
+            x2 = component['x'] + component['w']
+            y2 = component['y'] + component['h']
+            if x >= x1 and y >= y1 and x < x2 and y < y2:
+                component_focus_id = component['id']
+                component_focus = components[component_focus_id]
+                break
+
+def update():
+    global running
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -252,35 +341,21 @@ while running:
             else:
                 key_name = pygame.key.name(event.key)
                 input_keybord_char(key_name)
-
-    screen.fill('#101010')
-
-    x, y = pygame.mouse.get_pos()
-    if pygame.mouse.get_pressed()[0]:
-        for component in components:
-            x1 = component['x']
-            y1 = component['y']
-            x2 = component['x'] + component['w']
-            y2 = component['y'] + component['h']
-            if x >= x1 and y >= y1 and x < x2 and y < y2:
-                component_focus_id = component['id']
-                component_focus = components[component_focus_id]
-                break
-
+    component_focus_update()
     cursor_update()
 
-    for component in components:
-        x = component['x']
-        y = component['y']
-        w = component['w']
-        h = component['h']
-        pygame.draw.rect(screen, '#ffffff', pygame.Rect(x, y, w, h), 1)
+def draw():
+    screen.fill('#101010')
 
-        for line_i, line in enumerate(component['lines']):
-            text_surface = font.render(line, False, (255, 255, 255))
-            screen.blit(text_surface, (x, y+font_size*line_i))
+    cursor_draw()
+    components_draw()
 
     pygame.display.flip()
+
+running = True
+while running:
+    update()
+    draw()
 
 pygame.quit()
 
