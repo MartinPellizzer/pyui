@@ -46,33 +46,56 @@ textarea_2 = {
     'h': 500,
 }
 
-label_1 = {
-    'id': 2,
-    'type': 'label',
-    'text': 'Label 1',
-    'x': 700,
-    'y': 10,
-    'w': 20,
-    'h': 100,
-}
+def label_create(_id, text, x, y):
+    obj = {
+        'id': _id,
+        'type': 'label',
+        'text': text,
+        'x': x,
+        'y': y,
+        'w': 0,
+        'h': 0,
+    }
+    return obj
 
-button_1 = {
-    'id': 3,
-    'type': 'button',
-    'text': 'Button 1',
-    'x': 700,
-    'y': 40,
-    'w': 0,
-    'h': 0,
-    'px': 16,
-    'py': 8,
-}
+def button_create(_id, text, x, y):
+    obj = {
+        'id': _id,
+        'type': 'button',
+        'text': text,
+        'x': x,
+        'y': y,
+        'w': 0,
+        'h': 0,
+        'px': 16,
+        'py': 8,
+    }
+    return obj
+
+def image_create(_id, filepath, x, y, w, h):
+    pyimage = pygame.image.load(filepath)
+    pyimage = pygame.transform.scale(pyimage, (w, h))
+    obj = {
+        'id': _id,
+        'type': 'image',
+        'filepath': filepath,
+        'pyimage': pyimage,
+        'x': x,
+        'y': y,
+        'w': w,
+        'h': h,
+    }
+    return obj
+
 
 components = []
 components.append(textarea_1)
 components.append(textarea_2)
-components.append(label_1)
-components.append(button_1)
+components.append(label_create(2, 'Label 1', x=700, y=10))
+components.append(label_create(99, 'Label 2', x=800, y=10))
+components.append(button_create(3, 'Button 666', x=700, y=40))
+components.append(button_create(4, 'Button 999', x=700, y=80))
+components.append(image_create(5, 'abies-alba.jpg', x=700, y=120, w=128, h=128))
 
 component_focus_id = 1
 component_focus = components[component_focus_id]
@@ -92,7 +115,8 @@ def component_textarea_draw(component):
     pygame.draw.rect(screen, '#ffffff', pygame.Rect(x, y, w, h), 1)
     for line_i, line in enumerate(component['lines']):
         text_surface = font.render(line, False, (255, 255, 255))
-        screen.blit(text_surface, (x, y+font_size*line_i))
+        text_w, text_h = font.size(line)
+        screen.blit(text_surface, (x, y+text_h*line_i))
 
 def component_label_draw(component):
     x = component['x']
@@ -104,8 +128,6 @@ def component_label_draw(component):
 def component_button_draw(component):
     x = component['x']
     y = component['y']
-    # w = component['w']
-    # h = component['h']
     px = component['px']
     py = component['py']
     text = component['text']
@@ -115,6 +137,12 @@ def component_button_draw(component):
     pygame.draw.rect(screen, '#ffffff', pygame.Rect(x, y, w+px*2, h+py*2))
 
     screen.blit(text_surface, (x+px, y+py))
+
+def component_image_draw(component):
+    x = component['x']
+    y = component['y']
+    pyimage = component['pyimage']
+    screen.blit(pyimage, (x, y))
 
 def components_draw():
     for component in components:
@@ -126,6 +154,8 @@ def components_draw():
             component_label_draw(component)
         elif component['type'] == 'button':
             component_button_draw(component)
+        elif component['type'] == 'image':
+            component_image_draw(component)
 
 def cursor_update():
     x = component_focus['x']
@@ -310,7 +340,7 @@ def component_focus_update():
                 component_focus = components[component_focus_id]
                 break
 
-def update():
+def update_manage():
     global running
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -344,18 +374,19 @@ def update():
     component_focus_update()
     cursor_update()
 
-def draw():
+def draw_manage():
     screen.fill('#101010')
 
     cursor_draw()
     components_draw()
 
+
     pygame.display.flip()
 
 running = True
 while running:
-    update()
-    draw()
+    update_manage()
+    draw_manage()
 
 pygame.quit()
 
