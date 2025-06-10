@@ -3,434 +3,332 @@
         {
             "id": 0,
             "lines": [
-                "milk selection and treatment"
+                "home"
             ],
             "line_index": 0,
-            "char_index": 5,
-            "x_start": 872,
-            "y_start": 583,
-            "x": 868,
-            "y": 573,
-            "w": 112,
+            "char_index": 4,
+            "x_start": 644,
+            "y_start": 581,
+            "x": 802,
+            "y": 347,
+            "w": 107,
+            "h": 18
+        },
+        {
+            "id": 1,
+            "lines": [
+                "settori"
+            ],
+            "line_index": 0,
+            "char_index": 7,
+            "x_start": 801,
+            "y_start": 434,
+            "x": 801,
+            "y": 434,
+            "w": 107,
+            "h": 18
+        },
+        {
+            "id": 2,
+            "lines": [
+                "lattiero-caseario"
+            ],
+            "line_index": 0,
+            "char_index": 9,
+            "x_start": 512,
+            "y_start": 507,
+            "x": 575,
+            "y": 510,
+            "w": 107,
             "h": 18
         },
         {
             "id": 3,
             "lines": [
-                "udder"
+                "carni"
             ],
             "line_index": 0,
             "char_index": 5,
-            "x_start": 410,
-            "y_start": 333,
-            "x": 368,
-            "y": 338,
-            "w": 112,
+            "x_start": 657,
+            "y_start": 506,
+            "x": 721,
+            "y": 509,
+            "w": 107,
             "h": 18
         },
         {
             "id": 4,
             "lines": [
-                "inside"
+                "ittico"
             ],
             "line_index": 0,
             "char_index": 6,
-            "x_start": 356,
-            "y_start": 253,
-            "x": 324,
-            "y": 238,
-            "w": 112,
+            "x_start": 802,
+            "y_start": 509,
+            "x": 805,
+            "y": 511,
+            "w": 107,
             "h": 18
         },
         {
             "id": 5,
             "lines": [
-                "outside"
+                "ortofrutticolo"
             ],
             "line_index": 0,
-            "char_index": 7,
-            "x_start": 487,
-            "y_start": 241,
-            "x": 404,
-            "y": 235,
-            "w": 112,
+            "char_index": 14,
+            "x_start": 880,
+            "y_start": 501,
+            "x": 870,
+            "y": 512,
+            "w": 107,
             "h": 18
         },
         {
             "id": 6,
             "lines": [
-                "where"
+                "vinicolo"
             ],
             "line_index": 0,
-            "char_index": 5,
-            "x_start": 577,
-            "y_start": 384,
-            "x": 640,
-            "y": 384,
-            "w": 112,
+            "char_index": 8,
+            "x_start": 996,
+            "y_start": 501,
+            "x": 994,
+            "y": 513,
+            "w": 107,
             "h": 18
         },
         {
             "id": 7,
             "lines": [
-                "milking equipment"
+                "cow"
             ],
             "line_index": 0,
-            "char_index": 17,
-            "x_start": 501,
-            "y_start": 332,
-            "x": 499,
-            "y": 314,
-            "w": 112,
+            "char_index": 3,
+            "x_start": 335,
+            "y_start": 629,
+            "x": 336,
+            "y": 624,
+            "w": 107,
             "h": 18
         },
         {
             "id": 8,
             "lines": [
-                "human"
+                "mastitis"
             ],
             "line_index": 0,
-            "char_index": 5,
-            "x_start": 659,
-            "y_start": 332,
-            "x": 644,
-            "y": 317,
-            "w": 113,
+            "char_index": 8,
+            "x_start": 605,
+            "y_start": 668,
+            "x": 323,
+            "y": 681,
+            "w": 107,
             "h": 18
         },
         {
             "id": 9,
             "lines": [
-                "animal"
+                "2020-02-02-intramammary-ozone-mastitis-cows",
+                "",
+                "ozone gas in inflamed quarter",
+                "19 holstein divided in 2 groups",
+                "    - 15 treated with ozone",
+                "    - 4 with antibiotic",
+                "",
+                "60 perc [9/15] of cows healed with ozone",
+                "no additional antibiotic needed",
+                "",
+                "effective, safe, cost effective, no drug residue in milk"
             ],
-            "line_index": 0,
-            "char_index": 6,
-            "x_start": 734,
-            "y_start": 327,
-            "x": 710,
-            "y": 316,
-            "w": 112,
+            "line_index": 10,
+            "char_index": 56,
+            "x_start": 168,
+            "y_start": 770,
+            "x": -72,
+            "y": 781,
+            "w": 107,
             "h": 18
         },
         {
             "id": 10,
             "lines": [
-                "soil"
+                "surfaces"
             ],
             "line_index": 0,
-            "char_index": 4,
-            "x_start": 814,
-            "y_start": 328,
-            "x": 774,
-            "y": 316,
-            "w": 112,
+            "char_index": 8,
+            "x_start": 596,
+            "y_start": 612,
+            "x": 602,
+            "y": 612,
+            "w": 107,
             "h": 18
         },
         {
             "id": 11,
             "lines": [
-                "1. pathogenic bacteria",
-                "2. spoliage bacteria",
-                "3. beneficial bacteria"
-            ],
-            "line_index": 2,
-            "char_index": 22,
-            "x_start": 898,
-            "y_start": 254,
-            "x": 896,
-            "y": 254,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 13,
-            "lines": [
-                "inactivate most pathogens",
-                "but not all spoliage"
-            ],
-            "line_index": 1,
-            "char_index": 20,
-            "x_start": 883,
-            "y_start": 68,
-            "x": 1168,
-            "y": 215,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 14,
-            "lines": [
-                "cow"
+                "manure"
             ],
             "line_index": 0,
-            "char_index": 3,
-            "x_start": 433,
-            "y_start": 595,
-            "x": 515,
-            "y": 582,
-            "w": 112,
+            "char_index": 6,
+            "x_start": 521,
+            "y_start": 677,
+            "x": 604,
+            "y": 678,
+            "w": 107,
             "h": 18
         },
         {
-            "id": 15,
+            "id": 12,
             "lines": [
-                "contaminations"
+                "2018-05-14-surfaces-contamination-manure"
             ],
             "line_index": 0,
-            "char_index": 14,
-            "x_start": 732,
-            "y_start": 459,
-            "x": 920,
-            "y": 452,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 16,
-            "lines": [
-                "what"
-            ],
-            "line_index": 0,
-            "char_index": 4,
-            "x_start": 957,
-            "y_start": 388,
-            "x": 956,
-            "y": 386,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 17,
-            "lines": [
-                "pasteurization"
-            ],
-            "line_index": 0,
-            "char_index": 14,
-            "x_start": 924,
-            "y_start": 150,
-            "x": 1211,
-            "y": 278,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 18,
-            "lines": [
-                "pathogenic bacteria"
-            ],
-            "line_index": 0,
-            "char_index": 19,
-            "x_start": 904,
-            "y_start": 167,
-            "x": 907,
-            "y": 157,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 19,
-            "lines": [
-                "listeria monocytogenes"
-            ],
-            "line_index": 0,
-            "char_index": 22,
-            "x_start": 893,
-            "y_start": 71,
-            "x": 617,
-            "y": 50,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 20,
-            "lines": [
-                "cause listeriosis",
-                "low prelevance",
-                "mortality rate 20-30 perc",
-                "hard to identify",
-                "",
-                "source; ",
-                "    - cross-contamination",
-                "    - udder infection",
-                "a single cow in a herd of 160 cows",
-                "can contaminate the entire bulk milk"
-            ],
-            "line_index": 8,
-            "char_index": 0,
-            "x_start": 572,
-            "y_start": -173,
-            "x": 570,
-            "y": -193,
-            "w": 112,
-            "h": 18
-        },
-        {
-            "id": 21,
-            "lines": [
-                "escherichia coli"
-            ],
-            "line_index": 0,
-            "char_index": 16,
-            "x_start": 969,
-            "y_start": 19,
-            "x": 918,
-            "y": 47,
-            "w": 112,
+            "char_index": 40,
+            "x_start": 533,
+            "y_start": 777,
+            "x": 474,
+            "y": 777,
+            "w": 107,
             "h": 18
         }
     ],
     "edges": [
         {
-            "id_1": 3,
-            "id_2": 4,
-            "x1": 594,
-            "y1": 505,
-            "x2": 227,
-            "y2": 363
+            "id_1": 0,
+            "id_2": 1,
+            "x1": 664,
+            "y1": 593,
+            "x2": 801,
+            "y2": 582
         },
         {
-            "id_1": 3,
-            "id_2": 5,
-            "x1": 602,
-            "y1": 509,
-            "x2": 361,
-            "y2": 379
+            "id_1": 1,
+            "id_2": 2,
+            "x1": 828,
+            "y1": 443,
+            "x2": 765,
+            "y2": 498
         },
         {
-            "id_1": 6,
+            "id_1": 1,
             "id_2": 3,
-            "x1": 830,
-            "y1": 408,
-            "x2": 476,
-            "y2": 323
+            "x1": 815,
+            "y1": 444,
+            "x2": 900,
+            "y2": 499
         },
         {
-            "id_1": 6,
+            "id_1": 1,
+            "id_2": 3,
+            "x1": 835,
+            "y1": 438,
+            "x2": 900,
+            "y2": 499
+        },
+        {
+            "id_1": 1,
+            "id_2": 3,
+            "x1": 814,
+            "y1": 439,
+            "x2": 900,
+            "y2": 499
+        },
+        {
+            "id_1": 1,
+            "id_2": 4,
+            "x1": 812,
+            "y1": 439,
+            "x2": 886,
+            "y2": 451
+        },
+        {
+            "id_1": 1,
+            "id_2": 1,
+            "x1": 829,
+            "y1": 438,
+            "x2": 801,
+            "y2": 434
+        },
+        {
+            "id_1": 1,
+            "id_2": 1,
+            "x1": 829,
+            "y1": 442,
+            "x2": 801,
+            "y2": 434
+        },
+        {
+            "id_1": 1,
+            "id_2": 1,
+            "x1": 807,
+            "y1": 440,
+            "x2": 801,
+            "y2": 434
+        },
+        {
+            "id_1": 1,
+            "id_2": 5,
+            "x1": 828,
+            "y1": 440,
+            "x2": 707,
+            "y2": 428
+        },
+        {
+            "id_1": 1,
+            "id_2": 6,
+            "x1": 812,
+            "y1": 440,
+            "x2": 954,
+            "y2": 437
+        },
+        {
+            "id_1": 2,
             "id_2": 7,
-            "x1": 870,
-            "y1": 418,
-            "x2": 590,
-            "y2": 319
+            "x1": 828,
+            "y1": 423,
+            "x2": 609,
+            "y2": 597
         },
         {
-            "id_1": 6,
+            "id_1": 7,
             "id_2": 8,
-            "x1": 899,
-            "y1": 497,
-            "x2": 659,
-            "y2": 332
+            "x1": 834,
+            "y1": 501,
+            "x2": 609,
+            "y2": 670
         },
         {
-            "id_1": 6,
-            "id_2": 8,
-            "x1": 899,
-            "y1": 499,
-            "x2": 659,
-            "y2": 332
-        },
-        {
-            "id_1": 6,
-            "id_2": 8,
-            "x1": 882,
-            "y1": 493,
-            "x2": 659,
-            "y2": 332
-        },
-        {
-            "id_1": 6,
+            "id_1": 8,
             "id_2": 9,
-            "x1": 897,
-            "y1": 497,
-            "x2": 725,
-            "y2": 362
+            "x1": 839,
+            "y1": 580,
+            "x2": 473,
+            "y2": 736
         },
         {
-            "id_1": 6,
+            "id_1": 2,
             "id_2": 10,
-            "x1": 890,
-            "y1": 496,
-            "x2": 800,
-            "y2": 329
+            "x1": 630,
+            "y1": 517,
+            "x2": 596,
+            "y2": 612
         },
         {
-            "id_1": 14,
-            "id_2": 0,
-            "x1": 498,
-            "y1": 785,
-            "x2": 775,
-            "y2": 596
-        },
-        {
-            "id_1": 6,
-            "id_2": 15,
-            "x1": 712,
-            "y1": 584,
-            "x2": 732,
-            "y2": 459
-        },
-        {
-            "id_1": 15,
-            "id_2": 0,
-            "x1": 833,
-            "y1": 659,
-            "x2": 775,
-            "y2": 596
-        },
-        {
-            "id_1": 15,
-            "id_2": 16,
-            "x1": 847,
-            "y1": 657,
-            "x2": 975,
-            "y2": 391
-        },
-        {
-            "id_1": 16,
+            "id_1": 10,
             "id_2": 11,
-            "x1": 1045,
-            "y1": 591,
-            "x2": 898,
-            "y2": 254
-        },
-        {
-            "id_1": 17,
-            "id_2": 13,
-            "x1": 1015,
-            "y1": 347,
-            "x2": 881,
-            "y2": 93
+            "x1": 618,
+            "y1": 621,
+            "x2": 516,
+            "y2": 677
         },
         {
             "id_1": 11,
-            "id_2": 18,
-            "x1": 1027,
-            "y1": 476,
-            "x2": 904,
-            "y2": 167
-        },
-        {
-            "id_1": 18,
-            "id_2": 19,
-            "x1": 1022,
-            "y1": 356,
-            "x2": 899,
-            "y2": 70
-        },
-        {
-            "id_1": 19,
-            "id_2": 20,
-            "x1": 1019,
-            "y1": 529,
-            "x2": 572,
-            "y2": -173
-        },
-        {
-            "id_1": 18,
-            "id_2": 21,
-            "x1": 1054,
-            "y1": 619,
-            "x2": 918,
-            "y2": 47
+            "id_2": 12,
+            "x1": 756,
+            "y1": 620,
+            "x2": 533,
+            "y2": 777
         }
     ]
 }
