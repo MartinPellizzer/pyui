@@ -1,5 +1,4 @@
 # TODO: fix mouse wheel press and scroll at the same time, it gives bugs
-# TODO: fix edge position by camera zoom and pan (maybe gen function to get the adjusted pos of a node)
 
 import json
 import pygame
